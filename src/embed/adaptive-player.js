@@ -21,10 +21,15 @@ var DEFAULT_BITS_PER_SECOND = 1000000;
  */
 function AdaptivePlayer() {
   this.video = document.createElement('video');
-  this.video.loop = true;
+  this.video.loop = false;
   // Enable inline video playback in iOS 10+.
   this.video.setAttribute('playsinline', true);
   this.video.setAttribute('crossorigin', 'anonymous');
+  this.video.addEventListener('ended',function(e){
+    // console.log("Video Has Ended")
+    var videoEndEvent = new Event('videoEnd');
+    document.dispatchEvent(videoEndEvent);
+  });
 }
 AdaptivePlayer.prototype = new EventEmitter();
 

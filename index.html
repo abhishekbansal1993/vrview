@@ -22,9 +22,9 @@
       <img src="images/ic_play_arrow_white_24dp.svg"/>
     </div>
 
-    <a id="watermark" href="http://g.co/vr/view" target="_blank">
+ <!--   <a id="watermark" href="http://g.co/vr/view" target="_blank">
       <img src="images/ic_info_outline_black_24dp.svg"/>
-    </a>
+    </a> -->
 
     <script>
 WebVRConfig = {
@@ -34,5 +34,13 @@ WebVRConfig = {
 
     <script src="build/three.js"></script>
     <script src="build/embed.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('videoEnd', function(){
+        console.log("Video End Event Called");
+        console.log("Video End Event Called 1");
+        Android.endActivity();
+        console.log("Video End Event Called 2");
+      });
+    </script>
 	</body>
 </html>
