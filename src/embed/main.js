@@ -88,8 +88,9 @@ function onRenderLoad(event) {
     // On mobile, tell the user they need to tap to start. Otherwise, autoplay.
     if (Util.isMobile()) {
       // Tell user to tap to start.
-      showPlayButton();
-      document.body.addEventListener('touchend', onVideoTap);
+      // showPlayButton();
+      // document.body.addEventListener('touchend', onVideoTap);
+      event.videoElement.play();
     } else {
       event.videoElement.play();
     }

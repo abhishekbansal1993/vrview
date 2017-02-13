@@ -14,6 +14,7 @@ function onLoad() {
     //is_yaw_only: true,
     is_autopan_off: true,
     //is_vr_off: true,
+    start_mode: 3,
   });
   vrView.on('ready', onVRViewReady);
 
